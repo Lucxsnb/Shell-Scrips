@@ -9,7 +9,7 @@ if [ -z "$1" ]; then
 fi
 
 IP=$1
-ARQUIVO="ARQUIVO.log"
+ARQUIVO="access.log"
 
 echo "Analisando registros do IP: $IP"
 

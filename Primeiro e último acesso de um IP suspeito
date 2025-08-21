@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Este scripe verifica o primeiro e o último acesso de um IP no arquivo de log que fornecer
+
+# Verifica se o usuário passou o IP como argumento
+if [ -z "$1" ]; then
+    echo "Uso: $0 <IP_SUSPEITO>"
+    exit 1
+fi
+
+IP=$1
+ARQUIVO="ARQUIVO.log"
+
+echo "Analisando registros do IP: $IP"
+
+# Primeiro acesso do IP
+echo -e "\nPrimeiro acesso:"
+grep "$IP" $ARQUIVO | head -n1
+
+# Último acesso do IP
+echo -e "\nÚltimo acesso:"
+grep "$IP" $ARQUIVO | tail -n1
